@@ -134,10 +134,10 @@ Run the read-only smoke test from the repository root:
 
 ```text
 npm run mcp:smoke
-npm run mcp:smoke -- --inspect
+npm run mcp:inspect
 ```
 
-The script reads `ADOBE_ILLUSTRATOR_MCP_URL` and `ADOBE_ILLUSTRATOR_MCP_BEARER_TOKEN` from a local `.env.local` file or the process environment. Regenerate the token in Illustrator Beta > MCP & Tools before testing; never commit `.env.local` or paste the token into an issue, log, or chat. The first command must complete MCP `initialize` and `tools/list` without changing Illustrator. The second may call only the exact read-only `illustrator_inspect_document` tool when the bridge advertises it.
+The script reads `ADOBE_ILLUSTRATOR_MCP_URL` and `ADOBE_ILLUSTRATOR_MCP_BEARER_TOKEN` from a local `.env.local` file or the process environment. Regenerate the token in Illustrator Beta > MCP & Tools before testing; never commit `.env.local` or paste the token into an issue, log, or chat. The first command must complete MCP `initialize` and `tools/list` without changing Illustrator. The second calls only the advertised read-only `GetCanvasStructure` / `GetActiveArtboard` capabilities (or `illustrator_inspect_document` when a bridge uses that name).
 
 If the bridge is reachable but returns HTTP 401, stop and regenerate the local token. If the tool list uses different names, record the advertised names and map them to the acceptance stages before attempting a write.
 

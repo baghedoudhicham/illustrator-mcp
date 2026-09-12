@@ -39,8 +39,9 @@ function printHelp() {
 
 Reads ADOBE_ILLUSTRATOR_MCP_URL and ADOBE_ILLUSTRATOR_MCP_BEARER_TOKEN
 from the environment or .env.local, then performs a read-only MCP
-initialize + tools/list check. --inspect calls a tool only when the bridge
-advertises the exact read-only name illustrator_inspect_document.
+initialize + tools/list check. --inspect calls the bridge's read-only
+GetCanvasStructure and GetActiveArtboard tools when advertised (or the
+generic illustrator_inspect_document name when available).
 
 The bearer token is never printed or written to a result file.`);
 }
@@ -127,16 +128,23 @@ async function main() {
   for (const tool of tools) console.log(`- ${tool.name}`);
 
   if (!args.inspect) return;
-  const inspectTool = tools.find(tool => tool.name === "illustrator_inspect_document");
-  if (!inspectTool) {
-    console.log("Read-only inspect skipped: illustrator_inspect_document is not advertised by this bridge.");
+  const inspectNames = ["illustrator_inspect_document", "GetCanvasStructure", "GetActiveArtboard"];
+  const inspectTools = inspectNames.filter(name => tools.some(tool => tool.name === name));
+  if (!inspectTools.length) {
+    console.log("Read-only inspect skipped: no known document-inspection tool is advertised by this bridge.");
     return;
   }
-  const inspectResult = await rpc("tools/call", {
-    name: inspectTool.name,
-    arguments: {}
-  });
-  console.log(JSON.stringify(inspectResult?.result ?? inspectResult, null, 2));
+  let inspectionFailed = false;
+  for (const name of inspectTools) {
+    const inspectResult = await rpc("tools/call", {
+      name,
+      arguments: {}
+    });
+    console.log(`Inspection: ${name}`);
+    console.log(JSON.stringify(inspectResult?.result ?? inspectResult, null, 2));
+    inspectionFailed ||= Boolean(inspectResult?.isError || inspectResult?.result?.isError);
+  }
+  if (inspectionFailed) process.exitCode = 1;
 }
 
 main().catch(error => {
