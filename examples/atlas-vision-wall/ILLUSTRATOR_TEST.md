@@ -127,3 +127,20 @@ Inspect the artboard and report:
 Then create a preview image.
 
 Do not export final production files yet. This is an MCP acceptance test and composition test.
+
+## Bridge preflight (before any mutation)
+
+Run the read-only smoke test from the repository root:
+
+```text
+npm run mcp:smoke
+npm run mcp:smoke -- --inspect
+```
+
+The script reads `ADOBE_ILLUSTRATOR_MCP_URL` and `ADOBE_ILLUSTRATOR_MCP_BEARER_TOKEN` from a local `.env.local` file or the process environment. Regenerate the token in Illustrator Beta > MCP & Tools before testing; never commit `.env.local` or paste the token into an issue, log, or chat. The first command must complete MCP `initialize` and `tools/list` without changing Illustrator. The second may call only the exact read-only `illustrator_inspect_document` tool when the bridge advertises it.
+
+If the bridge is reachable but returns HTTP 401, stop and regenerate the local token. If the tool list uses different names, record the advertised names and map them to the acceptance stages before attempting a write.
+
+## Minimal mutation test
+
+After the read-only preflight succeeds, use the bridge's named layer/text capabilities to create exactly one temporary layer named `MCP TEST` and one live text object containing `QUALITY` in that layer. Capture the active document state before and after. Verify that `QUALITY` remains editable and that the pre-existing artwork is unchanged. Undo or remove only those two test objects after verification, then record the observed tool names, returned object IDs, and screenshots. Do not import Atlas artwork during this stage.
