@@ -143,4 +143,10 @@ If the bridge is reachable but returns HTTP 401, stop and regenerate the local t
 
 ## Minimal mutation test
 
-After the read-only preflight succeeds, use the bridge's named layer/text capabilities to create exactly one temporary layer named `MCP TEST` and one live text object containing `QUALITY` in that layer. Capture the active document state before and after. Verify that `QUALITY` remains editable and that the pre-existing artwork is unchanged. Undo or remove only those two test objects after verification, then record the observed tool names, returned object IDs, and screenshots. Do not import Atlas artwork during this stage.
+After the read-only preflight succeeds, run the isolated generic-text acceptance test from the repository root:
+
+```text
+npm run mcp:acceptance
+```
+
+Before running it, open and activate `examples/fixtures/mcp-acceptance-text.svg` in Illustrator. The script refuses to mutate any other active document. It uses the bridge's currently advertised capabilities—`CreateLayer`, `DuplicateObjects`, `ReplaceText`, `MoveObjectsToContainer`, `GetTypographyMetrics`, and `CapturePreview`—to create exactly one temporary layer named `MCP TEST` and one live text object containing `QUALITY` in that layer. The current 47-tool bridge does not advertise a direct `CreateText` capability; the fixture therefore proves an editable live-text round trip without inventing an adapter API. Capture the active document state before and after, verify that `QUALITY` remains editable, and keep the disposable result open for visual inspection. If cleaning up, remove only the test layer in this disposable fixture; never delete pre-existing user artwork. Do not import Atlas artwork during this stage.
