@@ -1,0 +1,99 @@
+{
+  "project": "Atlas Construction Vision Wall",
+  "source": "99designs client brief",
+  "wall": {
+    "widthIn": 176,
+    "heightIn": 73,
+    "ratio": 2.4109589041,
+    "workingScale": "1:4",
+    "workingArtboardIn": { "width": 44, "height": 18.25 }
+  },
+  "intent": "Environmental graphic for a meeting room. Not a generic word cloud. The artwork should feel architectural, warm, premium, family-owned, and construction-led.",
+  "direction": {
+    "name": "Built by Many / The Atlas We Build",
+    "basis": "Merge the architectural hierarchy of Figma Concept A with the more distinctive cultural layer of Concept C.",
+    "rules": [
+      "Use the Atlas lime as a controlled structural accent, not the dominant field color.",
+      "Use charcoal/dark graphite for primary typography.",
+      "Let repeated values drive scale and prominence.",
+      "Keep all four contributor groups legible through subtle organization rather than four obvious color boxes.",
+      "Treat Hawaiian words as meaningful cultural language, never decorative filler.",
+      "Keep all typography editable until final production export.",
+      "Prefer a deliberate construction grid, measured alignment, and restrained overlap."
+    ]
+  },
+  "palette": {
+    "atlasLimeApprox": "#C7E012",
+    "charcoal": "#2C2E2F",
+    "midGray": "#686A6B",
+    "warmWhite": "#F8F8F4"
+  },
+  "primaryValues": [
+    "QUALITY",
+    "FAMILY",
+    "INTEGRITY",
+    "TRUST",
+    "OHANA",
+    "RESPONSIVE",
+    "CARING",
+    "RELIABLE",
+    "EXCELLENCE",
+    "PROFESSIONAL"
+  ],
+  "categories": {
+    "officeAdmin": [
+      "Trustworthy", "Passionate", "Caring", "Family", "Integrity", "Motivation",
+      "Quality", "Service Driven", "Honesty", "Fun", "Vanguard", "Devotion",
+      "Ethos", "Reliance", "Driven", "Work", "Active", "Ohana", "Ho'oikaika",
+      "Imua", "Ikaika", "Genuine", "Veracious", "Kinship", "Cohesive",
+      "Resilient", "Reliable", "Excellence", "Trust", "Dreams",
+      "Accountability", "Empathy"
+    ],
+    "fieldStaff": [
+      "Quality", "Integrity", "Pride", "Sincerity", "Hard Work", "Family",
+      "Foundation", "Reliable", "Dependable", "Efficient", "Loyalty",
+      "Meticulous", "Precision", "Excellence", "Legacy", "Traditional",
+      "Craftsmanship", "Discipline", "Honest", "Dedicated", "Lasting",
+      "Opportunity", "Continuous Improvement", "Quality and Fairness",
+      "Honesty", "Consistency", "Perseverance"
+    ],
+    "subcontractors": [
+      "Understanding", "Flexible", "Easy Going", "Friendly", "Helpful",
+      "Family", "Perfection", "Innovative", "Ohana", "Trust", "Strong Foundation",
+      "Store-Reliable", "Diligent", "Reliable", "Professional",
+      "Excellent Service", "Commitment", "Quality", "Dedicated to Excellence",
+      "Unbeatable Quality", "Precision", "Integrity", "Aloha", "Honesty",
+      "Dedication", "Clients First"
+    ],
+    "homeownersClients": [
+      "Integrity", "Reliability", "Excellence", "Exquisite Work", "Compassionate",
+      "Ohana", "Patience", "Communication", "Support", "Client Centric",
+      "Responsive", "Solutions", "Communicative", "Solution Oriented", "Awesome",
+      "Friendly", "Reliable", "Professional", "Caring", "Quality", "Thoughtful",
+      "Family", "Promise", "Trust", "Referable", "Accountability", "Trustworthy",
+      "Relational", "Top-Notch", "Proactive", "Accommodating", "Patient",
+      "Teamwork", "Flexible", "Conscientious", "Efficiency", "Respectful",
+      "Customer Focused", "Collaborative", "Inspirational", "Personalized",
+      "Professionalism", "Confident of Your Work", "Trust Not to Be Cheated",
+      "Love Felt From All of You", "Honesty", "Meticulous", "Creative",
+      "Laulima", "No'eau", "Onipa'a", "Detailed", "Fairness", "Unwavering",
+      "Loyal", "Honorable"
+    ]
+  },
+  "layers": [
+    "00_GUIDES",
+    "01_ATLAS_MARK",
+    "02_STRUCTURAL_GEOMETRY",
+    "03_PRIMARY_VALUES",
+    "04_SECONDARY_VALUES",
+    "05_CATEGORY_LANGUAGE",
+    "06_HAWAIIAN_LANGUAGE",
+    "07_PRODUCTION_NOTES"
+  ],
+  "production": {
+    "keepLiveText": true,
+    "outlineOnlyInFinalCopy": true,
+    "exports": ["AI", "PDF", "SVG"],
+    "proofAtFullWallRatio": true
+  }
+}

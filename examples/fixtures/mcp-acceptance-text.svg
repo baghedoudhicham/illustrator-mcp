@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="640" height="360" viewBox="0 0 640 360">
+  <title>Illustrator MCP acceptance text fixture</title>
+  <g id="source" inkscape:groupmode="layer" inkscape:label="SOURCE">
+    <text id="mcp-placeholder"
+          x="320" y="210"
+          text-anchor="middle"
+          font-family="Arial"
+          font-size="72"
+          font-weight="700"
+          fill="#2C2E2F">PLACEHOLDER</text>
+  </g>
+</svg>

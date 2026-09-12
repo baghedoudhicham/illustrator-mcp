@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "name": "hicham-initial",
+  "samples": 0,
+  "targetAnchorsPer1000": 20,
+  "cornerAngleDeg": 40,
+  "smoothnessWeight": 1.15,
+  "symmetryWeight": 1.2,
+  "simplifyTolerance": 0.002,
+  "preferPrimitiveRecovery": true,
+  "preferCompoundPaths": true,
+  "notes": [
+    "Initial placeholder profile; replace values with measurements from accepted traces.",
+    "Favor deliberate geometry over literal raster noise.",
+    "Clean clutter and blur by reconstructing likely intended relationships, not by smoothing blindly."
+  ]
+}

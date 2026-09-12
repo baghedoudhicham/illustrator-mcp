@@ -33,3 +33,5 @@ AI should decide **what needs interpretation**. Geometry, measurement, cleanup, 
 ## Status
 
 Initial architecture and MVP implementation in progress.
+
+The current MCP implementation scores sampled geometry and suggests cleanup; raster stroke extraction and Illustrator execution are not implemented by those tools. See the [editable stroke reconstruction roadmap](docs/stroke-tracing-roadmap.md) for the scoped research plan, baseline methods, evaluation protocol, and release gates. The core must work locally without a paid AI client. Atlas remains an example; the first tracing research target is isolated, uniform-width outlined symbols.
